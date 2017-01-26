@@ -33,7 +33,7 @@ def home_page():
 
 @app.route('/area/<course_area>')
 def area_page(course_area):
-    return render_template('courses.html', areas=set(courses.course_area), courses=courses[courses.course_area == course_area].iterrows())
+    return render_template('courses.html', areas=set(courses.course_area), courses=courses[courses.course_area == course_area].iterrows(), course_area=course_area)
 
 
 @app.route('/instructor/<instructor>')

@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Olin Course Catalog: {% if course_area %}{{ course_area }}{% else %}{{ instructor }}{% endif %}</title>
+    <title>Olin Course Catalog: {{ instructor }}{{ course_area }}</title>
     <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/static/css/index.css">
@@ -20,6 +20,7 @@
     </div>
     <div class="container">
       <div class="col-xs-12">
+        {% if instructor %}<h2 class="text-center">{{ instructor }}</h2>{% endif %}
         {% for index, course in courses %}
           <dt>{{ course.course_number }}: {{ course.course_name }} ({{ course.course_contact }})</dt>
           <dd>{{ course.course_description }}</dd>
