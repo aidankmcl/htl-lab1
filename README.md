@@ -51,6 +51,14 @@ could break it with no warning.
 
 Written by Oliver Steele <oliver.steele@olin.edu>.
 
+Modified by Aidan McLaughlin <aidan.mclaughlin@students.olin.edu>:
+- Moved course areas into a fixed navbar at the top.
+- Header has tiling Olin-esque diagonal lines of Olin blue.
+- Instructors on home page ordered by concentration areas.
+- Instructors can be clicked on to get a list of their course offerings (home page).
+- Home page navigation added to navbar.
+- Added gutters to page so things can breath a little more (Bootstrap was part of this).
+
 
 ## License
 
