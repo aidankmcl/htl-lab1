@@ -1,7 +1,14 @@
 .top {
 	background-image: url('/static/images/blue-lines.png');
 	background-repeat: repeat;
+    padding: 10px 0px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #9ce2ff;
 }
+	.top h1 {
+		color: #0087c6;
+	    font-weight: 800;
+	}
 
 ul.areas, ul.professors, ul.professor-holder {
 	list-style: none;

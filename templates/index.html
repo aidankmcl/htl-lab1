@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Olin Course Catalog</title>
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/static/css/index.css">
     <style type="text/css">
@@ -8,18 +9,16 @@
     </style>
   </head>
   <body>
+    <div class="top">
+      <h1 class="text-center">Course Catalog Fun-time!</h1>
+      <ul class="areas text-center">
+        <li><a href="/" {% if request.path == "/" %}class="active"{% endif %}><i class="ion-android-home"></i></a></li>
+      {% for area in areas | sort %}
+        <li><a {% if area in request.path %}class="active"{% endif %} href="/area/{{area}}">{{area}}</a></li>
+      {% endfor %}
+      </ul>
+    </div>
     <div class="container">
-      <div class="col-xs-12">
-        <h1 class="text-center">Course Catalog Fun-time!</h1>
-      </div>
-      <div class="col-xs-12">
-        <!-- <h2 class="text-center">Areas</h2> -->
-        <ul class="areas text-center">
-        {% for area in areas | sort %}
-          <li><a href="/area/{{area}}">{{area}}</a></li>
-        {% endfor %}
-        </ul>
-      </div>
       <div class="col-xs-12">
         <h2>Contacts by Area</h2>
         <ul class="professor-holder">
