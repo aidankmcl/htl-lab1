@@ -4,3 +4,4 @@
 # Flask
 instance/
 .webassets-cache
+venv/

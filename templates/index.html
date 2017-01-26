@@ -1,21 +1,41 @@
 <html>
   <head>
     <title>Olin Course Catalog</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
     <style type="text/css">
       td, th { border: 0 !important; }
     </style>
   </head>
   <body>
-    <h2>Areas</h2>
-    {% for area in areas | sort %}
-      <ul>
-        <li><a href="/area/{{area}}">{{area}}</a></li>
-      </ul>
-    {% endfor %}
+    <div class="container">
+      <div class="col-xs-12">
+        <h1 class="text-center">Course Catalog Fun-time!</h1>
+      </div>
+      <div class="col-xs-12">
+        <!-- <h2 class="text-center">Areas</h2> -->
+        <ul class="areas text-center">
+        {% for area in areas | sort %}
+          <li><a href="/area/{{area}}">{{area}}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+      <div class="col-xs-12">
+        <h2>Contacts by Area</h2>
+        <ul class="professor-holder">
+        {% for area in course_instructors.keys() | sort %}
+        <li>
+          {{ area }}
+          <ul class="professors">
+          {% for instructor in course_instructors[area] %}
+            <li><a href="/instructor/{{ instructor }}">{{ instructor }}</a></li>
+          {% endfor %}
+          </ul>
+        </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
 
-    <h2>Contacts</h2>
-    {% for contact in contacts | sort %}
-      {{contact}}
-    {% endfor %}
   </body>
 </html>
