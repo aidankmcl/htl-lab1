@@ -63,3 +63,11 @@ Modified by Aidan McLaughlin <aidan.mclaughlin@students.olin.edu>:
 ## License
 
 This code is made available under the MIT License
+
+
+## Screenshots
+![](./static/images/home.png)
+---
+![](./static/images/AHSE.png)
+---
+![](./static/images/teacher.png)
